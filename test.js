@@ -1,5 +1,6 @@
 const { Builder, By, Key } = require("selenium-webdriver");
 const assert = require("assert");
+const ltcapability = require("../test/capabilities");
 var should = require("chai").should();
 
 //describe block - used to group tests together,
