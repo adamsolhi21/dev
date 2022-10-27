@@ -1,15 +1,12 @@
-exports.capabilities = {
-	"browserName": "Chrome",
-	"browserVersion": "106.0",
-	"LT:Options": {
-		"username": "adam.travers",
-		"accessKey": "3QvTjiaQwdjoXJbYH7y6EospP3nrc1NQ3I24tlqqrhyU6yKxAa",
-		"platformName": "Windows 10",
-		"project": "Untitled",
-		"w3c": true,
-		"plugin": "node_js-mocha"
-	}
-};
-module.exports = {
-  capabilities
-};
+var capabilities = {
+	'bstack:options' : {
+		"os" : "Windows",
+		"osVersion" : "10",
+		"local" : "false",
+		"seleniumVersion" : "3.14.0",
+		"userName" : "adamtravers_Q07aDi",
+		"accessKey" : "orBTta7jUttyW8ZUvvXp",
+	},
+	"browserName" : "Chrome",
+	"browserVersion" : "latest",
+}
