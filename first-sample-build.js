@@ -7,31 +7,26 @@ async function runTestWithCaps (capabilities) {
       ...capabilities['browser'] && { browserName: capabilities['browser']}  // Because NodeJS language binding requires browserName to be defined
     })
     .build();
-    try {
-    await driver.get("https://bstackdemo.com/");
-    await driver.wait(webdriver.until.titleMatches(/StackDemo/i), 10000);
-    // locating product on webpage and getting name of the product
-    let productText = await driver
-      .findElement(webdriver.By.xpath('//*[@id="1"]/p'))
-      .getText();
-    // clicking the 'Add to cart' button
-    await driver.findElement(webdriver.By.xpath('//*[@id="1"]/div[4]')).click();
-    // waiting until the Cart pane has been displayed on the webpage
-    driver.findElement(webdriver.By.className("float-cart__content"));
-    // locating product in cart and getting name of the product in cart
-    let productCartText = await driv git push --set-upstream https://github.com/adamsolhi21/dev.git mainer
-      .findElement(
-        webdriver.By.xpath(
-          '//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]'
-        )
-      )
-      .getText();
-    // checking whether product has been added to cart by comparing product name
-    if(productCartText !== productText) 
-      throw new Error("");
-    await driver.executeScript(
-      'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed","reason": "Product has been successfully added to the cart!"}}'
-    );
+    try {  await driver.get("https://lambdatest.github.io/sample-todo-app/");
+    //https://stg-com.lh.uk/
+
+    //edit page
+    await driver
+      .findElement(By.id("sampletodotext"))
+      .sendKeys("kljfkd", Key.RETURN);
+
+    //assert
+    let todoText = await driver
+      .findElement(By.xpath("//li[last()]"))
+      .getText()
+      .then(function (value) {
+        return value;
+      });
+
+    //chai assertion should
+    todoText.should.equal("kljfkd");
+
+    await driver.quit();
   } catch (e) {
     await driver.executeScript(
       'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "Some elements failed to load!"}}'
