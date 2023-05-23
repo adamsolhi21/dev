@@ -1,15 +1,35 @@
 {
-  "name": "selenium",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ApplicationName",
+  "version": "0.0.1",
+  "description": "Application Description",
+  "main": "server.js",
   "scripts": {
-    "test": "mocha --no-timeouts"
+    "start": "node server.js",
+    "wdio": "wdio run ./wdio.conf.js"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/npm.git"
+  },
   "dependencies": {
-    "chai": "^4.3.6",
-    "selenium-webdriver": "^4.5.0"
+    "angular": "latest",
+    "angular-ui-router": "~0.2.11",
+    "dat-gui": "latest",
+    "express": "~3.0.1",
+    "path": "latest",
+    "q": "latest",
+    "sequelize": "latest",
+    "tedious": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/register": "^7.21.0",
+    "@wdio/appium-service": "^8.10.5",
+    "@wdio/cli": "^8.10.5",
+    "@wdio/local-runner": "^8.10.5",
+    "@wdio/mocha-framework": "^8.10.4",
+    "@wdio/spec-reporter": "^8.10.5",
+    "appium": "^1.22.3"
   }
 }
